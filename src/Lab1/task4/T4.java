@@ -1,21 +1,26 @@
 package Lab1.task4;
 
-public class Main {
+import java.util.ArrayList;
+
+public class T4 {
     public static void main(String[] args) {
         //i took N = 4;
-        int[] sourceArray = new int[]{1, 2, 3, 4};
-        printIndexOfPrimeNumbers(sourceArray);
+        int[] sourceArray = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        calculate(sourceArray);
     }
 
-    public static void printIndexOfPrimeNumbers(int[] mas) {
+    public static String calculate(int[] mas) {
+
+        ArrayList<Integer> res = new ArrayList<Integer>();
         boolean hasPrimeNumbers = false;
         for (int i = 0; i < mas.length; i++)
             if (isPrime(mas[i])) {
                 hasPrimeNumbers = true;
-                System.out.println(mas[i]);
+                res.add(mas[i]);
             }
         if (!hasPrimeNumbers)
             System.out.println("No prime numbers");
+        return res.toString();
     }
 
     static boolean isPrime(int n) {
